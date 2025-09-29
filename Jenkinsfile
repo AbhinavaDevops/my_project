@@ -1,10 +1,22 @@
+#Declarative pipeline
 pipeline {
-    agent any
-    stages {
-        stage('Clone Repository') {
-            steps {
-                git url: 'https://github.com/AbhinavaDevops/my_project', branch: 'develop'
+    agent any 
+    
+        stages {
+            stage ("Build") { 
+                steps {
+                    echo "Building" 
+                }
+            stage ("Test") { 
+                steps {
+                    echo "Testing" 
+                }
+            stage ("Deploy") { 
+                steps {
+                    echo "Deploying" 
+                }
             }
         }
     }
 }
+                    
